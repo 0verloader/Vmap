@@ -2,7 +2,7 @@ import random
 from socket import *
 
 serverSocket = socket(AF_INET, SOCK_DGRAM)
-serverSocket.bind(('', 1309))
+serverSocket.bind(('localhost', 1309))
 
 while True:
     rand = random.randint(0, 10)
