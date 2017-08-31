@@ -1,2 +1,2 @@
 # Vmap
-A script that prints every open port of a target
+A simple scirpt that finds every open port at the target ip
