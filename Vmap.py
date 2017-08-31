@@ -35,14 +35,17 @@ def checkTCP(host, port, ret_array, ret_index):
 
 
 if __name__ == "__main__":
-    max_=1320
-    base=1289
+    base=int(raw_input("base port:"))
+    max_=int(raw_input("max port:"))+1
+    if(max_<base):
+        exit()
+    
     host = sys.argv[1]
     ret = [None] * ((max_-base) * 2)
     threads = [None] * ((max_-base) * 2)
     for y in range(base, max_ + 1, 20):
         tmp = subprocess.call('clear', shell=True)
-        print int((float(y) / max_) * 100), "%"
+        print int((float(y-base) / (max_-base)) * 100), "%"
         if y + 20 > max_ + 1:
             z = max_ - base 
         else:
@@ -58,18 +61,19 @@ if __name__ == "__main__":
         for i in range(k, z):
             threads[(2 * i) ].join()
             threads[(2 * i) + 1].join()
-        print "__"
     tmp = subprocess.call('clear', shell=True)
     print "100 % "
-    print "SCAN COMPLETED"
+    print "SCAN IS COMPLETE"
+
     print sys.argv[1], ":open ports\n"
     for y in range(0, (max_ - base)*2):
         if ret[y]==1:
             if y % 2 ==1:
                 temp=y-1#udp
-                print "[UDP] ",
+                print "[UDP]",
+
             else:
                 temp=y#tcp
-                print "[TCP] ",
+                print "[TCP]",
             temp=temp/2
             print base+temp

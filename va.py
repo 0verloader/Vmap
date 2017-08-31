@@ -5,8 +5,6 @@ serverSocket = socket(AF_INET, SOCK_DGRAM)
 serverSocket.bind(('localhost', 1309))
 
 while True:
-    rand = random.randint(0, 10)
-    message, address = serverSocket.recvfrom(1024)
+    message, address = serverSocket.recvfrom(1)
     message = message.upper()
-    if rand >= 4:
-        serverSocket.sendto(message, address) 
+    serverSocket.sendto(message, address) 
