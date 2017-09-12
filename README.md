@@ -1,6 +1,5 @@
         
-```
-     _______
+```  _______
      \      \        _____
       \      \      |     |
        \      \     |     |
@@ -16,8 +15,6 @@
   
         
                                     A simple way to find open ports!
-
-
 
 ```
 ***Version 1.0.0***
@@ -52,7 +49,7 @@ Once you have successfully run the program:
 Contributors
 ---
 
-- 0verloader <https://github.com/0verloader>
+-0verloader <https://github.com/0verloader>
 
 Please report bugs to <konstantinosarakadakis@gmail.com>
 
