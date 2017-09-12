@@ -1,5 +1,6 @@
         
-```  _______
+```
+     _______
      \      \        _____
       \      \      |     |
        \      \     |     |
@@ -49,9 +50,9 @@ Once you have successfully run the program:
 Contributors
 ---
 
--0verloader <https://github.com/0verloader>
+- 0verloader <https://github.com/0verloader>
 
-Please report bugs to <konstantinosarakadakis@gmail.com>
+  Please report bugs to <konstantinosarakadakis@gmail.com>
 
 License & copyright
 ---
