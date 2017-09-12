@@ -1,29 +1,27 @@
 #Vmap
-
-
-     _______
-     \      \        _____
-      \      \      |     |
-       \      \     |     |
-        \      \    |     |
-         \      \   |     | ____    ____   ______       ___________
-          \      \  |     |/    \  /    \ |      \     |    ____   /
-           \      \ |     /      \/      \|       \    |   |   /  /  
-            \      \|    /    /\    /\    \   |\   \   |   |__/  /
-             \           |   |  \__/  |   |   |_\   \  |    ____/
-              \          |   |        |   |    __    \ |   |
-               \        /|   |        |   |   |   \   \|   |
-                \______/ |___|        |___|___|    \___\___|
-  
-        
-                                    A simple way to find open ports!
+                 _______
+                 \      \        _____
+                  \      \      |     |
+                   \      \     |     |
+                    \      \    |     |
+                     \      \   |     | ____    ____   ______       ___________
+                      \      \  |     |/    \  /    \ |      \     |    ____   /
+                       \      \ |     /      \/      \|       \    |   |   /  /  
+                        \      \|    /    /\    /\    \   |\   \   |   |__/  /
+                         \           |   |  \__/  |   |   |_\   \  |    ____/
+                          \          |   |        |   |    __    \ |   |
+                           \        /|   |        |   |   |   \   \|   |
+                            \______/ |___|        |___|___|    \___\___|
+              
+                    
+                                                A simple way to find open ports!
 
 
 
 ##How it works
 ```
-Vmap uses parallel threading to connect to multiple ports. If the connection is successful it means that the port is open,
-otherwise it is closed.
+Vmap uses parallel threading to connect to multiple ports. If the connection is successful it means
+that the port is open. Otherwise it is closed.
 ```
 
 ##Clone and run
