@@ -19,13 +19,15 @@ Vmap
                                               A simple way to find open ports!
 ```
 
-##How it works
+How it works
+==
 ```
 Vmap uses parallel threading to connect to multiple ports. If the connection is successful it means
 that the port is open. Otherwise it is closed.
 ```
 
-##Clone and run
+Clone and run
+==
 ```
 git clone https://github.com/0verloader/Vmap.git
 ```
@@ -38,12 +40,16 @@ python Vmap.py
 
 Once you have successfully run the program:
 ```
-Insert IP or domain name of the target
+1.Insert IP or domain name of the target
 
-Insert minimum port that will be checked (greater than 0)
+2.Insert minimum port that will be checked (greater than 0)
 
-Insert maximum port that will be checked (less than 65536)
+3.Insert maximum port that will be checked (less than 65536)
 ```
 
-##Contributors
+Contributors
+==
+```
 0verloader
+Plese report bugs to konstantinosarakadakis@gmail.com
+```
