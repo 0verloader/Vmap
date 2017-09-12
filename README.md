@@ -22,7 +22,7 @@
 ```
 ***Version 1.0.0***
 
-How does Vmap do
+What does Vmap do
 ---
 
 Vmap uses parallel threading to connect to multiple ports of the target. If a connection is successful it means
@@ -56,3 +56,6 @@ Contributors
 
 Please report bugs to <konstantinosarakadakis@gmail.com>
 
+License & copyright
+---
+Licenced under the [MIT licence](LICENSE).
