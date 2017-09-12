@@ -51,8 +51,8 @@ Once you have successfully run the program:
 
 Contributors
 ---
-```
+
 - 0verloader <https://github.com/0verloader>
 
 Please report bugs to <konstantinosarakadakis@gmail.com>
-```
+
