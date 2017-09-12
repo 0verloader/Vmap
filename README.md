@@ -25,7 +25,7 @@
 How does Vmap do
 ---
 
-Vmap uses parallel threading to connect to multiple ports to the target. If a connection is successful it means
+Vmap uses parallel threading to connect to multiple ports of the target. If a connection is successful it means
 that the port is open. Otherwise it is closed.
 
 ---
@@ -52,7 +52,7 @@ Once you have successfully run the program:
 Contributors
 ---
 ```
-- 0verloader
+- 0verloader <https://github.com/0verloader>
 
-Plese report bugs to <konstantinosarakadakis@gmail.com>
+Please report bugs to <konstantinosarakadakis@gmail.com>
 ```
