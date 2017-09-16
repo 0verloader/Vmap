@@ -42,9 +42,10 @@ python Vmap.py
 
 Once you have successfully run the program:
 ```
-1.Insert IP or domain name of the target
-2.Insert minimum port to be checked (greater than 0)
-3.Insert maximum port to be checked (less than 65536)
+1.Insert number of parallel threads
+2.Insert IP or domain name of the target
+3.Insert minimum port to be checked (greater than 0)
+4.Insert maximum port to be checked (less than 65536)
 ```
 
 Contributors

@@ -151,48 +151,52 @@ def port_translate(port):
 
 
 if __name__ == "__main__":
-    while(True):
-        host = raw_input("host (exit): ")
-        if host == "exit":
-            break
-        base = int(raw_input("base port: "))
-        max_ = int(raw_input("max port: ")) + 1
-        if(max_ < base or base < 1):
-            continue
-        ret = [None] * ((max_ - base) * 2)
-        threads = [None] * ((max_ - base) * 2)
-        start = time.time()
-        for y in range(base, max_ + 1, 20):
-            tmp = subprocess.call('clear', shell=True)
-            print int((float(y - base) / (max_ - base)) * 100), "%"
-            if y + 20 > max_ + 1:
-                z = max_ - base
-            else:
-                z = y - base + 20
-            k = y - base
-            p_temp = y
-            for i in range(k, z):
-                threads[(2 * i)] = threading.Thread(target=check_tcp, args=(host, p_temp, ret, (2 * i)))
-                threads[(2 * i) + 1] = threading.Thread(target=check_udp, args=(host, p_temp, ret, (2 * i)+ 1))
-                threads[(2 * i)].start()
-                threads[(2 * i) + 1].start()
-                p_temp = p_temp + 1
-            for i in range(k, z):
-                threads[(2 * i)].join()
-                threads[(2 * i) + 1].join()
-        tmp = subprocess.call('clear', shell=True)
-        print "100 %  [COMPLETE]"
-        for y in range(0, (max_ - base) * 2):
-            if ret[y] == 1:
-                if y % 2 == 1:
-                    '''udp'''
-                    temp = y - 1
-                    print "[UDP]",
+    try:
+        MAX_THREADS = int(input("parallel threads:"))
+        while(True):
+            host = raw_input("host (exit): ")
+            if host == "exit":
+                break
+            base = int(raw_input("base port: "))
+            max_ = int(raw_input("max port: ")) + 1
+            if(max_ < base or base < 1):
+                continue
+            ret = [None] * ((max_ - base) * 2)
+            threads = [None] * ((max_ - base) * 2)
+            start = time.time()
+            for y in range(base, max_ + 1, MAX_THREADS):
+                tmp = subprocess.call('clear', shell=True)
+                print int((float(y - base) / (max_ - base)) * 100), "%"
+                if y + MAX_THREADS > max_ + 1:
+                    z = max_ - base
                 else:
-                    '''tcp'''
-                    temp = y
-                    print "[TCP]",
-                temp = temp / 2
-                print base + temp, port_translate(base + temp)
-                print round(Decimal(time.time() - start), 1), "s"
-        print "__________________"
+                    z = y - base + MAX_THREADS
+                k = y - base
+                p_temp = y
+                for i in range(k, z):
+                    threads[(2 * i)] = threading.Thread(target=check_tcp, args=(host, p_temp, ret, (2 * i)))
+                    threads[(2 * i) + 1] = threading.Thread(target=check_udp, args=(host, p_temp, ret, (2 * i)+ 1))
+                    threads[(2 * i)].start()
+                    threads[(2 * i) + 1].start()
+                    p_temp = p_temp + 1
+                for i in range(k, z):
+                    threads[(2 * i)].join()
+                    threads[(2 * i) + 1].join()
+            tmp = subprocess.call('clear', shell=True)
+            print "100 %  [COMPLETE]"
+            for y in range(0, (max_ - base) * 2):
+                if ret[y] == 1:
+                    if y % 2 == 1:
+                        '''udp'''
+                        temp = y - 1
+                        print "[UDP]",
+                    else:
+                        '''tcp'''
+                        temp = y
+                        print "[TCP]",
+                    temp = temp / 2
+                    print base + temp, port_translate(base + temp)
+                    print round(Decimal(time.time() - start), 1), "s"
+            print "__________________"
+    except:
+        print "Something happened. Goodbye!"
